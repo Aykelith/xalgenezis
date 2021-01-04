@@ -1,4 +1,9 @@
+//= Functions & Modules
+// Own
 import CheckerError from "./CheckerError";
+
+//= Structures & Data
+// Own
 import CheckerErrorTypes from "./CheckerErrorTypes";
 
 export function stringChecker(settings = {}) {
