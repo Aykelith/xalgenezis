@@ -1,7 +1,9 @@
-import GenezisChecker from "@genezis/genezis/Checker";
-import deleteOnProduction from "@genezis/genezis/utils/deleteOnProduction";
-import { PLUGIN_ARGS_REQUIREMENTS_KEYWORD } from "@genezis/genezis/utils/doPlugins";
+//= Functions & Modules
+// Own
+import { PLUGIN_ARGS_REQUIREMENTS_KEYWORD } from "./doPlugins";
 import DocumentChecker from "../DocumentChecker";
+// xalgenezis
+import GenezisChecker, { deleteOnProduction } from "@aykelith/xalgenezis-checker";
 
 const GeneratorGenezisCheckerConfig = deleteOnProduction({
     documentConfig: GenezisChecker.required(),

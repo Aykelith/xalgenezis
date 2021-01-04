@@ -3,7 +3,7 @@
 import ValueType from "./data/SearchAggregateValueType";
 import SearchType from "./data/SearchAggregateSearchType";
 // Packages
-import GenezisGeneralError from "@genezis/genezis/GenezisGeneralError";
+import GenezisGeneralError from "@aykelith/xalgenezis-generalerror";
 import { ObjectID as MongoID } from "mongodb";
 
 /**

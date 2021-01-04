@@ -1,6 +1,9 @@
-import { createGenerateOptions, stringChecker, integerChecker, booleanChecker, requiredChecker, numberChecker } from "@genezis/genezis/Checker";
+//= Functions & Modules
+// xalgenezis
+import { createGenerateOptions, stringChecker, integerChecker, booleanChecker, requiredChecker, numberChecker } from "@aykelith/xalgenezis-checker/src/Checker";
+import GenezisGeneralError from "@aykelith/xalgenezis-generalerror";
+// Packages
 import { ObjectID as MongoID, Int32 as MongoInt32, Long as MongoInt64 } from "mongodb";
-import GenezisGeneralError from "@genezis/genezis/GenezisGeneralError";
 
 export const Errors = {
     NOT_UNIQUE: "genezis-utils-mongodb_documentchecker_not_unique"

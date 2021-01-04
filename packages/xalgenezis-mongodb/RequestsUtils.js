@@ -1,18 +1,17 @@
 //= Functions & Modules
 // Own
 import createSearchAggregate from "./createSearchAggregate";
+import numberOfObjectsWithProperty from "./utils/numberOfObjectsWithProperty";
 // Packages
-import GenezisChecker from "@genezis/genezis/Checker";
-import GenezisGeneralError from "@genezis/genezis/GenezisGeneralError";
-import GenezisCheckerError from "@genezis/genezis/CheckerError";
-import numberOfObjectsWithProperty from "@genezis/genezis/utils/numberOfObjectsWithProperty";
+import GenezisChecker, { CheckerError as GenezisCheckerError } from "@aykelith/xalgenezis-checker";
+import GenezisGeneralError from "@aykelith/xalgenezis-generalerror";
 import { ObjectID as MongoID, Collection as MongoDBCollection } from "mongodb";
-import RequestError from "@genezis/genezis-utils-router/RequestError";
-import createRequest, { GenezisRulesConfig as BaseRequestGenezisConfig } from "@genezis/genezis-utils-router/createRequest";
+import RequestError from "@aykelith/xalgenezis-expressjs/src/RequestError";
+import createRequest, { GenezisRulesConfig as BaseRequestGenezisConfig } from "@aykelith/xalgenezis-expressjs/src/createRequest";
 
 //= Structures & Data
 // Packages
-import GenezisCheckerErrorTypes from "@genezis/genezis/CheckerErrorTypes";
+import GenezisCheckerErrorTypes from "@aykelith/xalgenezis-checker/src/CheckerErrorTypes";
 
 /**
  * @name MongoDBRequestField
