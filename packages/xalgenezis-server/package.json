@@ -1,6 +1,6 @@
 {
   "name": "@aykelith/xalgenezis-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,10 @@
     "url": "https://github.com/Aykelith/xalgenezis/issues"
   },
   "homepage": "https://github.com/Aykelith/xalgenezis#readme",
-  "devDependencies": {},
+  "peerDependencies": {
+    "jsonfile": "^6.1.0",
+    "js-yaml": "^4.0.0"
+  },
   "dependencies": {},
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/aykelith"

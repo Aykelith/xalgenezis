@@ -21,7 +21,7 @@ export default (configFilePaths, settings = {}) => {
             const yaml = require("js-yaml");
 
             try {
-                Object.assign(configSettings, yaml.safeLoad(fs.readFileSync(configFilePath, "utf8")));
+                Object.assign(configSettings, yaml.load(fs.readFileSync(configFilePath, "utf8")));
             } catch (error) {
                 throw new Error(`There where errors parsing the config file "${configFilePath}": ${error.message}`);
             }
