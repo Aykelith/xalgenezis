@@ -1,8 +1,8 @@
 // TODO: Can only parse simple arrays
 function serializeObject(root, obj) {
     const keys = Object.keys(obj);
-    var url = "";
-    for (var i=0, length = keys.length; i < length; ++i) {
+    let url = "";
+    for (let i=0, length = keys.length; i < length; ++i) {
         if (obj[keys[i]] === null) continue;
 
         if (typeof obj[keys[i]] === "object") {
@@ -10,7 +10,7 @@ function serializeObject(root, obj) {
                 const key = keys[i];
                 const name = "&" + root + escape((root) ? "[" + keys[i] + "]" : keys[i]) + "[]=";
 
-                for (var j=0, length2=obj[key].length; j < length2; ++j) {
+                for (let j=0, length2=obj[key].length; j < length2; ++j) {
                     url += name + escape(obj[key][j]);
                 }
             } else {
