@@ -1,6 +1,6 @@
 {
   "name": "@aykelith/xalgenezis-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
   "homepage": "https://github.com/Aykelith/xalgenezis#readme",
   "peerDependencies": {
     "jsonfile": "^6.1.0",
-    "js-yaml": "^4.0.0"
+    "js-yaml": "^4.0.0",
+    "axios": "^0.21.1"
   },
   "dependencies": {},
   "publishConfig": {
