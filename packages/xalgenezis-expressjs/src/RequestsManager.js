@@ -1,7 +1,9 @@
+//= Functions & Modules
+// Own
+import { createRouteFunction } from "./data/RouteTypes";
+// Packages
 import asyncHandler from "express-async-handler";
 import express from "express";
-
-import { createRouteFunction } from "./data/RouteTypes";
 
 export default class RequestManager {
     constructor(app) {

@@ -1,4 +1,9 @@
-import _GenezisConfig from "@genezis/genezis/Checker";
+//= Functions & Modules
+// xalgenezis
+import _GenezisConfig from "@aykelith/xalgenezis-checker";
+
+//= Structures & Data
+// Own
 import { RouteTypesValues } from "./data/RouteTypes";
 
 export default (requestType, path, requestFunc) => {

@@ -1,6 +1,7 @@
-import GenezisChecker from "@genezis/genezis/Checker";
-import deleteOnProduction from "@genezis/genezis/utils/deleteOnProduction";
-
+//= Functions & Modules
+// xalgenezis
+import GenezisChecker, { deleteOnProduction } from "@aykelith/xalgenezis-checker";
+// Packages
 import Express from "express";
 
 const GenezisCheckerConfig = deleteOnProduction({

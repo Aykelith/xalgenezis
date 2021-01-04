@@ -1,5 +1,8 @@
-import _GenezisConfig from "@genezis/genezis/Checker";
+//= Functions & Modules
+// Own
 import PreventMultipleCalls_requestSetup from "./PreventMultipleCalls_requestSetup";
+// xalgenezis
+import _GenezisConfig from "@aykelith/xalgenezis-checker";
 
 export const ERROR_ALREADY_IN_REQUEST = "error:already_in_request";
 

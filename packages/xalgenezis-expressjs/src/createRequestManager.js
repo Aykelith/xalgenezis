@@ -1,6 +1,8 @@
-import GenezisChecker from "@genezis/genezis/Checker";
-import deleteOnProduction from "@genezis/genezis/utils/deleteOnProduction";
+//= Functions & Modules
+// Own
 import RequestManager from "./RequestsManager";
+// xalgenezis
+import GenezisChecker, { deleteOnProduction } from "@aykelith/xalgenezis-checker";
 
 import { GenezisChecker as RouteStructureGenezisConfig } from "./createRouteStructure";
 

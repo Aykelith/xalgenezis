@@ -1,7 +1,8 @@
 //= Functions & Modules
+// xalgenezis
+import GenezisGeneralError from "@aykelith/xalgenezis-generalerror";
 // Packages
 import nanoid from "nanoid/non-secure";
-import GenezisGeneralError from "@genezis/genezis/GenezisGeneralError";
 
 function preventMultipleCall_sessionVariableName(uniqueID) {
     return `genezis_preventMultipleCalls_${uniqueID}`;

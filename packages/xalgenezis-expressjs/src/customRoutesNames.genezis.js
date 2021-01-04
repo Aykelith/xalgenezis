@@ -1,4 +1,6 @@
-import GenezisChecker from "@genezis/genezis/Checker";
+//= Functions & Modules
+// xalgenezis
+import GenezisChecker from "@aykelith/xalgenezis-checker";
 
 export default {
     genezisConfig: {

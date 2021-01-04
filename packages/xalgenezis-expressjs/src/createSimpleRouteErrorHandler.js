@@ -1,7 +1,8 @@
 //= Functions & Modules
+// Own
+import RequestError from "./RequestError";
 // xalGenezis
 import GenezisGeneralError from "@aykelith/xalgenezis-generalerror";
-import RequestError from "@aykelith/xalgenezis-expressjs/RequestError";
 
 export default (settings) => {
     return async (error, req, res, next) => {
