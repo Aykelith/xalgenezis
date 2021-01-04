@@ -1,0 +1,24 @@
+{
+  "name": "@aykelith/xalgenezis-expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aykelith/xalgenezis"
+  },
+  "author": "Alexandru Prisacariu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aykelith/xalgenezis/issues"
+  },
+  "homepage": "https://github.com/Aykelith/xalgenezis#readme",
+  "devDependencies": {},
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/aykelith"
+  }
+}
