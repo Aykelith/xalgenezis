@@ -1,5 +1,5 @@
 export default class extends Error {
-    constructor(statusCode : number, message : string, originalError : Error) {
+    constructor(statusCode : number, message? : string, originalError? : Error) {
         super(message);
 
         this.name = this.constructor.name;
