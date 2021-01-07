@@ -1,0 +1,1 @@
+{"version":3,"file":"createRouteStructure.js","sourceRoot":"","sources":["../src/createRouteStructure.ts"],"names":[],"mappings":"AAUA,eAAe,CAAC,WAAuB,EAAE,IAAwB,EAAE,WAAmC,EAAE,EAAE;IACtG,OAAO;QACH,WAAW,EAAE,WAAW;QACxB,IAAI,EAAE,IAAI;QACV,WAAW,EAAE,WAAW;KAC3B,CAAC;AACN,CAAC,CAAA"}
