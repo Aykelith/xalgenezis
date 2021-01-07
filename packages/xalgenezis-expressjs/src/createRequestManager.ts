@@ -1,7 +1,7 @@
 //= Functions & Modules
 // Own
 import RequestManager from "./RequestsManager";
-import { RouteStructureType } from "./createRouteStructure";
+import RouteStructureType from "./RouteStructureType";
 
 type GroupRoutesType = {
     mainPath: string | string[],
