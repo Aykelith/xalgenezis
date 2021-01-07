@@ -1,21 +1,27 @@
-//= Funcitons & Modules
-// xalgenezis
-import GenezisChecker from "@aykelith/xalgenezis-checker";
-
 const isProduction = process.env.NODE_ENV == "production";
-
-const GenezisCheckerSettingsConfig = {
-
-};
 
 export const PLUGIN_ARGS_REQUIREMENTS_KEYWORD = "pluginArgsRequirements";
 
-function constructPluginObjectArgument(plugin, args) {
+type PluginRequirementsType = 
+    string |
+    {
+        name:        string,
+        canBeNull?:  boolean,
+        requiredIf?: string[]
+    };
+
+interface PluginType {
+    (): Function,
+    [PLUGIN_ARGS_REQUIREMENTS_KEYWORD]: PluginRequirementsType[]
+}
+
+function constructPluginObjectArgument(plugin : PluginType, args : any) {
     if (!isProduction) {
         if (!plugin[PLUGIN_ARGS_REQUIREMENTS_KEYWORD]) throw new Error(`The plugin "${plugin.name}" doesn't have the "${PLUGIN_ARGS_REQUIREMENTS_KEYWORD}"`);
 
         plugin[PLUGIN_ARGS_REQUIREMENTS_KEYWORD].forEach(requirement => {
-            let requirementName, options = {};
+            let requirementName : string, 
+                options : any = {};
             if (typeof requirement === "string") requirementName = requirement;
             else {
                 requirementName = requirement.name;
@@ -23,7 +29,7 @@ function constructPluginObjectArgument(plugin, args) {
             }
             
             if (args[requirementName] === undefined) {
-                if (options.skipIfFail/*deprecated*/ || options.canBeNull) return;
+                if (options.canBeNull) return;
                 if (options.requiredIf) {
                     let fail = false;
                     
@@ -42,7 +48,7 @@ function constructPluginObjectArgument(plugin, args) {
         });
     }
 
-    let pluginArgs = {};
+    let pluginArgs : any = {};
     plugin[PLUGIN_ARGS_REQUIREMENTS_KEYWORD].forEach(requirement => {
 		const field = typeof requirement === "string" ? requirement : requirement.name;
         pluginArgs[field] = args[field];
@@ -51,12 +57,25 @@ function constructPluginObjectArgument(plugin, args) {
     return pluginArgs;
 }
 
-export default async (plugins, args, settings) => {
-    let arePluginsArray = Array.isArray(plugins);
-    let _plugins = arePluginsArray ? plugins : Object.values(plugins);
+type PluginsType = 
+    Function[] |
+    {
+        [key : string]: Function
+    }
 
-    let answers;
-    let pluginsNames;
+type SettingsType = {
+    runParallel?: boolean,
+    onError?: {
+        crashImmediatly?: boolean,
+        executePlugins: Function[]
+    }
+};
+
+export default async (plugins : PluginsType, args : any, settings : SettingsType) => {
+    let arePluginsArray = Array.isArray(plugins);
+    let _plugins : any = arePluginsArray ? plugins : Object.values(plugins);
+
+    let answers : any;
 
     answers = [];
 

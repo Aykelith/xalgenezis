@@ -6,7 +6,7 @@
  * @param {*} property 
  * @param {*} value 
  */
-export default (array, property, value) => {
+export default (array : any[], property : string, value : any) => {
     let numberOfObjects = 0;
     array.forEach(data => {
         if (data[property]) {

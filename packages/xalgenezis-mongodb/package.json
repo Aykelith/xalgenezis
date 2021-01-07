@@ -1,8 +1,9 @@
 {
   "name": "@aykelith/xalgenezis-mongodb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +17,22 @@
     "url": "https://github.com/Aykelith/xalgenezis/issues"
   },
   "homepage": "https://github.com/Aykelith/xalgenezis#readme",
-  "devDependencies": {},
-  "dependencies": {},
+  "devDependencies": {
+    "@types/mongodb": "^3.6.3",
+    "@types/node": "^14.14.20",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "typescript": "^4.1.3"
+  },
+  "peerDependencies": {
+    "mongodb": "^3.6.3",
+    "@aykelith/xalgenezis-expressjs": "^1.0.5"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/aykelith"
+  },
+  "dependencies": {
+    "@aykelith/xalgenezis-generalerror": "^1.0.2"
   }
 }

@@ -14,13 +14,13 @@ import { ObjectID as MongoID } from "mongodb";
  * 
  * @returns {Any} the converted value, or string value  
  */
-function convertSearchType(type, value) {
+function convertSearchType(type : ValueType, value : any) : any {
     switch (type) {
         case ValueType.INTEGER:
             return parseInt(value);
 
         case ValueType.MONGOID:
-            return MongoID(value);
+            return new MongoID(value);
 
         case ValueType.BOOL:
             return (typeof(value) == typeof(true) && value) || (value == "true");
@@ -34,6 +34,13 @@ function convertSearchType(type, value) {
         default:
             throw new GenezisGeneralError(`Not found the type "${type}"`);
     }
+}
+
+interface GenerateQueryDataType {
+    type?: SearchType,
+    valueType?: ValueType,
+    value: any,
+    [key : string]: any
 }
 
 /**
@@ -60,7 +67,7 @@ function convertSearchType(type, value) {
  * @example
  * { type: REGEX, value: "^[a,b]rr", $options: "g" }
  */
-function generateQuery(fieldName, data) {
+function generateQuery(fieldName : string, data : GenerateQueryDataType) : any {
     // TODO: Checkings for fieldName
     if (fieldName == "$or" || fieldName == "$and") {
         let query = [];
@@ -108,10 +115,10 @@ function generateQuery(fieldName, data) {
 
         return { $lte: value };
     } else if (data.type == SearchType.RANGE) {
-        let query = {};
+        let query : any = {};
         
         if (data.value.$lte) {
-            let value;
+            let value : any;
             if (data.valueType != null) {
                 value = convertSearchType(data.valueType, data.value.$lte);
             } else {
@@ -122,7 +129,7 @@ function generateQuery(fieldName, data) {
         }
 
         if (data.value.$gte) {
-            let value;
+            let value : any;
             if (data.valueType != null) {
                 value = convertSearchType(data.valueType, data.value.$gte);
             } else {
@@ -139,7 +146,7 @@ function generateQuery(fieldName, data) {
         let array = [];
 
         for (let j=0, length2 = data.value.length; j < length2; ++j) {
-            array.push(MongoID(data.value[j]));
+            array.push(new MongoID(data.value[j]));
         }
 
         return { [data.notIn ? "$nin" : "$in"]: array };
@@ -161,7 +168,7 @@ function generateQuery(fieldName, data) {
 
         return { [data.notIn ? "$nin" : "$in"]: array };
     } else if (data.type == SearchType.REGEX) {
-        let obj = { $regex: data.value };
+        let obj : any = { $regex: data.value };
 
         if (data.options) obj.$options = data.options;
 
@@ -197,8 +204,8 @@ function generateQuery(fieldName, data) {
  * @returns {Object} the aggregate object
  * @throws {WRONG_PARAMS}
  */
-export default (queryData, preAggregateData = {}) => {
-    let searchObject = [
+export default (queryData : any, preAggregateData : any = {}) => {
+    let searchObject : any = [
         { $match: preAggregateData.$match || {} }
     ];
 
