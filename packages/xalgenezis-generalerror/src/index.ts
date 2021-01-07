@@ -1,5 +1,5 @@
 export default class extends Error {
-    constructor(type : string | number, data : any, originalError : Error | undefined, customMessage? : string) {
+    constructor(type : string | number, data? : any, originalError? : Error, customMessage? : string) {
         super(customMessage || `genezis/GeneralError thrown`);
 
         this.name = this.constructor.name;
