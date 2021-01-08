@@ -2,6 +2,7 @@
 // Packages
 import jsonfile from "jsonfile";
 import axios    from "axios";
+import { EventEmitter } from "events";
 
 /**
  * The class that is responsible to getting and managing the webpack generated
@@ -13,6 +14,11 @@ import axios    from "axios";
  * @class
  */
 export default class WebpackStatsManager {
+    chunksFiles : any;
+    fullChunksFiles: any;
+    _webpackStatsPath : string;
+    _onRefreshEvents : Function[];
+
     /**
      * @constructor
      * @memberof WebpackStatsManager
@@ -20,7 +26,7 @@ export default class WebpackStatsManager {
      * @param {String} webpackStatsPath   the path to the webpack stats file
      * @param {EventEmitter} eventEmitter the event emitter for receiving updates
      */
-    constructor(webpackStatsPath, eventEmitter) {
+    constructor(webpackStatsPath : string, eventEmitter : EventEmitter) {
         this.chunksFiles = {};
         this.fullChunksFiles = {};
 
@@ -39,7 +45,7 @@ export default class WebpackStatsManager {
      * @private
      */
     async _loadWebpackStats() {
-        let webpackStats;
+        let webpackStats : any;
         if (this._webpackStatsPath.startsWith("http://")) {
             webpackStats = (await axios.get(this._webpackStatsPath)).data;
         } else {
@@ -62,12 +68,12 @@ export default class WebpackStatsManager {
      * 
      * @param {String} entrypointName the name of the entrypoint
      */
-    getEntrypointScripts(entrypointName) {
+    getEntrypointScripts(entrypointName : string) : string {
         let baseScriptsToLoad = "";
         if (typeof this.chunksFiles[entrypointName] === "string") {
             baseScriptsToLoad = `<script defer src="/generated/${this.chunksFiles[entrypointName]}"></script>`;
         } else if (Array.isArray(this.chunksFiles[entrypointName])) {
-            this.chunksFiles[entrypointName].forEach(file => {
+            this.chunksFiles[entrypointName].forEach((file : string) => {
                 if (file.includes(".js")) {
                     baseScriptsToLoad += `<script defer src="/generated/${file}"></script>`;
                 } else if (file.includes(".css")) {
@@ -100,8 +106,8 @@ export default class WebpackStatsManager {
      * @param {String} chunkName          the name of the chunk
      * @param {Boolean} getFromFullChunks if to get the chunk from the pile of full chunks
      */
-    getChunkScripts(chunkName, getFromFullChunks = false) {
-        const chunks = getFromFullChunks ? this.fullChunksFiles[chunkName] : this.chunksFiles[chunkName];
+    getChunkScripts(chunkName : string, getFromFullChunks = false) : string {
+        const chunks : any = getFromFullChunks ? this.fullChunksFiles[chunkName] : this.chunksFiles[chunkName];
 
         let head = "";
         
@@ -133,7 +139,7 @@ export default class WebpackStatsManager {
      * 
      * @param {Function} handler the function to be called
      */
-    onRefresh(handler) {
+    onRefresh(handler : Function) {
         this._onRefreshEvents.push(handler);
     }
 }

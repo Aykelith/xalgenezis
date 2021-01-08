@@ -2,8 +2,20 @@
 // Packages
 import fs from "fs";
 
-export default (configFilePaths, settings = {}) => {
-    let configSettings = {};
+declare global {
+    namespace NodeJS {
+        interface Global {
+            CONFIG: any
+        }
+    }
+}
+
+export interface SettingsType {
+    toGlobal?: boolean
+};
+
+export default (configFilePaths : string, settings : SettingsType = {}) : any => {
+    let configSettings : any = {};
     configFilePaths.split("@").forEach(configFilePath => {
         if (!fs.existsSync(configFilePath)) {
             throw new Error(`The config file "${configFilePath}" doesn't exists`);
@@ -30,7 +42,6 @@ export default (configFilePaths, settings = {}) => {
         }
     });
 
-    if (settings.checkerConfig) GenezisChecker(configSettings, settings.checkerConfig);
     if (settings.toGlobal) global.CONFIG = configSettings;
 
     return configSettings;
