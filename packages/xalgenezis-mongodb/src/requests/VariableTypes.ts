@@ -5,27 +5,30 @@ import { RequestError } from "@aykelith/xalgenezis-expressjs";
 import { ObjectID as MongoID } from "mongodb";
 
 export type VariableType_SettingsType = {
-    errorCode?: number,
-    errorMessage: string
-}
+  errorCode: number;
+  errorMessage: string;
+};
 
 export default {
-    MongoID: (settings : VariableType_SettingsType) : Function => {
-        if (!settings.errorCode) settings.errorCode = 400;
+  MongoID: (settings: VariableType_SettingsType): Function => {
+    if (!settings.errorCode) settings.errorCode = 400;
 
-        return (x : any) : MongoID => {
-            if (!MongoID.isValid(x)) throw new RequestError(settings.errorCode, settings.errorMessage);
-            return new MongoID(x);
-        };
-    },
+    return (x: any): MongoID => {
+      if (!MongoID.isValid(x))
+        throw new RequestError(settings.errorCode, settings.errorMessage);
+      return new MongoID(x);
+    };
+  },
 
-    Integer: (settings : VariableType_SettingsType) : Function => {
-        if (!settings.errorCode) settings.errorCode = 400;
+  Integer: (settings: VariableType_SettingsType): Function => {
+    if (!settings.errorCode) settings.errorCode = 400;
 
-        return (x : any) : number => {
-            let n = Number.parseInt(x);
-            if (Number.isNaN(n)) throw new RequestError(settings.errorCode, settings.errorMessage);
-            return n;
-        };
-    }
+    return (x: any): number => {
+      let n = Number.parseInt(x);
+      if (Number.isNaN(n))
+        throw new RequestError(settings.errorCode, settings.errorMessage);
+      return n;
+    };
+  },
 };
+

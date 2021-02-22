@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "ES2020",
-        "module": "ES2020",
+        "target": "ES2015",
+        "module": "CommonJS",
         "moduleResolution": "node",
 
         "allowJs": false,
@@ -13,12 +13,11 @@
         "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
 
         "declaration": true, 
-        "declarationMap": true,
         "sourceMap": true,
 
-        "outDir": "../dist"
+        "outDir": "./dist"
     },
     "include": [
-        "../src"
+        "./src"
     ]
 }

@@ -11,3 +11,5 @@ export { default as convertToMongoDB } from "./utils/convertToMongoDB";
 export { default as doPlugins } from "./utils/doPlugins";
 export { default as SearchAggregateSearchType } from "./data/SearchAggregateSearchType";
 export { default as SearchAggregateValueType } from "./data/SearchAggregateValueType";
+export { default as connectToDB } from "./utils/connectToDB";
+
