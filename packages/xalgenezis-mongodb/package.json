@@ -1,6 +1,6 @@
 {
   "name": "@aykelith/xalgenezis-mongodb",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,13 +31,10 @@
   },
   "peerDependencies": {
     "mongodb": "^3.6.4",
-    "@aykelith/xalgenezis-expressjs": "^1.0.5"
+    "@aykelith/xalgenezis-expressjs": "^1.0.8",
+    "@aykelith/xalgenezis-generalerror": "^1.0.4"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/aykelith"
-  },
-  "dependencies": {
-    "@aykelith/xalgenezis-expressjs": "^1.0.6",
-    "@aykelith/xalgenezis-generalerror": "^1.0.2"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@aykelith/xalgenezis-expressjs",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,8 +30,8 @@
     "eslint-config-airbnb": "^18.2.1",
     "typescript": "^4.1.3"
   },
-  "dependencies": {
-    "@aykelith/xalgenezis-generalerror": "^1.0.2"
+  "peerDependencies": {
+    "@aykelith/xalgenezis-generalerror": "^1.0.4"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/aykelith"
