@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "allowJs": false,
+    "jsx": "preserve",
+    "removeComments": false,
+    "strict": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "sourceMap": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
