@@ -1,10 +1,15 @@
 {
   "name": "@aykelith/xalgenezis-ajaxrequest",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build"
   },
   "repository": {
     "type": "git",
@@ -16,7 +21,9 @@
     "url": "https://github.com/Aykelith/xalgenezis/issues"
   },
   "homepage": "https://github.com/Aykelith/xalgenezis#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  },
   "dependencies": {},
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/aykelith"
