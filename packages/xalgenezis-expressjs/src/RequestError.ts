@@ -1,13 +1,17 @@
 export default class extends Error {
-    constructor(statusCode : number, message? : string, originalError? : Error) {
-        super(message);
+  public statusCode: number;
+  public originalError: any;
 
-        this.name = this.constructor.name;
-        // @ts-ignore
-        this.statusCode = statusCode;
-        // @ts-ignore
-        this.originalError = originalError;
+  constructor(statusCode: number, message?: string, originalError?: any) {
+    super(message);
 
-        Error.captureStackTrace(this, this.constructor);
-    }
-};
+    this.name = this.constructor.name;
+    // @ts-ignore
+    this.statusCode = statusCode;
+    // @ts-ignore
+    this.originalError = originalError;
+
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
+

@@ -15,7 +15,3 @@ export { default as RequestsManager } from "./RequestsManager";
 export { default as RequestWithStatus_redisSession } from "./RequestWithStatus_redisSession";
 export { default as RequestWithStatusUtils } from "./RequestWithStatusUtils";
 export { default as RouteStructureType } from "./RouteStructureType";
-
-//= Structures & Data
-// Own
-export { default as RouteTypes } from "./data/RouteTypes";
