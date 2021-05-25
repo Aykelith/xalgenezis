@@ -1,18 +1,24 @@
 {
-  "compilerOptions": {
-    "target": "ES2015",
-    "allowJs": false,
-    "removeComments": false,
-    "strict": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "outDir": "./dist",
-    "declaration": true,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
-  },
-  "include": [
-    "src/**/*"
-  ]
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "CommonJS",
+        "moduleResolution": "node",
+
+        "allowJs": false,
+        "removeComments": false,
+        "strict": true,
+        
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
+
+        "declaration": true, 
+        "sourceMap": true,
+
+        "outDir": "./dist"
+    },
+    "include": [
+        "./src"
+    ]
 }
+

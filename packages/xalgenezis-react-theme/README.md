@@ -1,2 +1,0 @@
-# XALGenezis React Theme
-

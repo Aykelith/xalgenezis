@@ -1,12 +1,10 @@
 {
   "name": "@aykelith/xalgenezis-generalerror",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
+  "files": ["dist/**/*"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,9 +18,10 @@
     "url": "https://github.com/Aykelith/xalgenezis/issues"
   },
   "homepage": "https://github.com/Aykelith/xalgenezis#readme",
-  "devDependencies": {},
-  "dependencies": {},
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/aykelith"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
   }
 }

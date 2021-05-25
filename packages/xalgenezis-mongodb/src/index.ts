@@ -7,9 +7,9 @@ export { default as createSingleGetterRequest } from "./requests/createSingleGet
 export { default as createSingleSetterRequest } from "./requests/createSingleSetterRequest";
 export { default as VariableTypes } from "./requests/VariableTypes";
 export { default as createSearchAggregate } from "./createSearchAggregate";
+export { default as createSearchAggregate2 } from "./createSearchAggregate2";
 export { default as convertToMongoDB } from "./utils/convertToMongoDB";
 export { default as doPlugins } from "./utils/doPlugins";
 export { default as SearchAggregateSearchType } from "./data/SearchAggregateSearchType";
 export { default as SearchAggregateValueType } from "./data/SearchAggregateValueType";
 export { default as connectToDB } from "./utils/connectToDB";
-

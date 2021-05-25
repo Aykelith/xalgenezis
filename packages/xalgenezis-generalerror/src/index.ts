@@ -1,17 +1,23 @@
-export default class extends Error {
-    constructor(type : string | number, data? : any, originalError? : Error, customMessage? : string) {
-        super(customMessage || `genezis/GeneralError thrown`);
+export default class GenezisGeneralError extends Error {
+  public type: string | number;
+  public data: any;
+  public originalError: any;
 
-        this.name = this.constructor.name;
+  constructor(
+    type: string | number,
+    data?: any,
+    originalError?: any,
+    customMessage?: string
+  ) {
+    super(customMessage || `genezis/GeneralError thrown with type "${type}"`);
 
-        // @ts-ignore
-        this.type = type;
-        // @ts-ignore
-        this.data = data;
-        // @ts-ignore
-        this.originalError = originalError;
+    this.name = this.constructor.name;
 
-        // @ts-ignore
-        Error.captureStackTrace(this, this.constructor);
-    }
+    this.type = type;
+    this.data = data;
+    this.originalError = originalError;
+
+    // @ts-ignore
+    Error.captureStackTrace(this, this.constructor);
+  }
 }

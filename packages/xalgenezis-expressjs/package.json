@@ -1,12 +1,10 @@
 {
   "name": "@aykelith/xalgenezis-expressjs",
-  "version": "1.0.14",
+  "version": "1.0.32",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
+  "files": ["dist/**/*"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,5 +34,8 @@
   "dependencies": {
     "@aykelith/xalgenezis-expressjs-data": "^1.0.2",
     "@aykelith/xalgenezis-generalerror": "^1.0.4"
+  },
+  "peerDependencies": {
+    "nanoid": "^3.x"
   }
 }

@@ -3,6 +3,8 @@
 import { Collection as MongoDBCollection } from "mongodb";
 
 export default interface BaseRequestSettingsInterface {
-    collection: MongoDBCollection,
-    onError?: Function
-};
+  collection: MongoDBCollection;
+  onBegin?: Function[];
+  onError?: Function;
+}
+

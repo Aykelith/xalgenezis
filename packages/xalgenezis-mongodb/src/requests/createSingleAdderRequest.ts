@@ -17,7 +17,6 @@ export interface Settings extends BaseRequestSettingsInterface {
   returnTheNewDoc?: boolean;
   afterInserted?: Function;
   customReturn?: Function;
-  onError: Function;
 }
 
 /**
@@ -51,7 +50,7 @@ export default (settings: Settings): Function => {
       _1: any
     ) => {
       if (!data)
-        await settings.onError(
+        await settings.onError!(
           new GenezisGeneralError(Errors.ADD_REQUEST__NO_USER_ADD_ENTRY),
           req,
           data,
@@ -63,7 +62,7 @@ export default (settings: Settings): Function => {
         doc = await settings.checker(req, data, sharedData);
       } catch (error) {
         if (error instanceof GenezisGeneralError) {
-          await settings.onError(error, req, data, sharedData);
+          await settings.onError!(error, req, data, sharedData);
         }
 
         throw error;
@@ -89,7 +88,7 @@ export default (settings: Settings): Function => {
       }
 
       if (result.insertedCount != 1)
-        await settings.onError(
+        await settings.onError!(
           new GenezisGeneralError(Errors.NO_MODIFIED_DOC),
           req,
           data,
@@ -116,4 +115,3 @@ export default (settings: Settings): Function => {
     }
   );
 };
-

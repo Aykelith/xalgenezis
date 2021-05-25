@@ -15,3 +15,15 @@ export { default as RequestsManager } from "./RequestsManager";
 export { default as RequestWithStatus_redisSession } from "./RequestWithStatus_redisSession";
 export { default as RequestWithStatusUtils } from "./RequestWithStatusUtils";
 export { default as RouteStructureType } from "./RouteStructureType";
+
+//= Structures & Data
+// Own
+export { default as CreateServerSettings } from "./data/CreateServerSettings";
+export { default as WebpackCompiledEventName } from "./data/WebpackCompiledEventName";
+// Others
+export {
+  RouteTypes,
+  RouteTypeKeys,
+  RouteTypeValues,
+  createRouteFunction,
+} from "@aykelith/xalgenezis-expressjs-data";
