@@ -1,10 +1,12 @@
 {
-  "name": "@aykelith/xalgenezis-generalerror",
-  "version": "1.0.8",
+  "name": "@aykelith/xalgenezis-expressjs-data",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +24,6 @@
     "registry": "https://npm.pkg.github.com/aykelith"
   },
   "devDependencies": {
-    "typescript": "^4.2.3"
+    "typescript": "^4.3.5"
   }
 }

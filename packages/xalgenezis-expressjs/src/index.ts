@@ -18,4 +18,12 @@ export { default as RouteStructureType } from "./RouteStructureType";
 
 //= Structures & Data
 // Own
-export { default as RouteTypes } from "./data/RouteTypes";
+export { default as CreateServerSettings } from "./data/CreateServerSettings";
+export { default as WebpackCompiledEventName } from "./data/WebpackCompiledEventName";
+// Others
+export {
+  RouteTypes,
+  RouteTypeKeys,
+  RouteTypeValues,
+  createRouteFunction,
+} from "@aykelith/xalgenezis-expressjs-data";

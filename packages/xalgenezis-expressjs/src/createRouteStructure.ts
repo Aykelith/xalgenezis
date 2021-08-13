@@ -1,11 +1,16 @@
 //= Structures & Data
 // Own
-import { RouteType } from "./data/RouteTypes";
+import { RouteTypeValues } from "@aykelith/xalgenezis-expressjs-data";
 
-export default (requestType : RouteType, path : string | string[], requestFunc : Function | Function[]) => {
-    return {
-        requestType: requestType,
-        path: path,
-        requestFunc: requestFunc
-    };
-}
+export default (
+  requestType: RouteTypeValues,
+  path: string | string[],
+  requestFunc: Function | Function[]
+) => {
+  return {
+    requestType: requestType,
+    path: path,
+    requestFunc: requestFunc,
+  };
+};
+

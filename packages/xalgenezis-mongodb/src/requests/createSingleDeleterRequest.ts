@@ -23,7 +23,6 @@ export interface Settings extends BaseRequestSettingsInterface {
   queryMaker: Function;
   messageOnNoData: string | Function;
   beforeDeleting?: Function;
-  onError: Function;
 
   throwErrorOnNoDocumentDeleted?: boolean;
 }
@@ -65,7 +64,7 @@ export default (settings: Settings): Function => {
 
       if (settings.oneField) {
         if (!data[settings.oneField.inputFieldName])
-          await settings.onError(
+          await settings.onError!(
             new GenezisGeneralError(Errors.DELETE_REQUEST__NO_INPUT_FIELD_NAME),
             req,
             data,
@@ -112,7 +111,7 @@ export default (settings: Settings): Function => {
 
       if (!itWorked) {
         if (settings.throwErrorOnNoDocumentDeleted)
-          await settings.onError(
+          await settings.onError!(
             new GenezisGeneralError(Errors.DELETE_REQUEST__NO_DOCUMENT_DELETED),
             req,
             data,
@@ -128,4 +127,3 @@ export default (settings: Settings): Function => {
     }
   );
 };
-

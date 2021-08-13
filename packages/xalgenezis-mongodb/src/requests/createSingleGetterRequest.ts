@@ -16,7 +16,7 @@ import { FindOneOptions } from "mongodb";
 import Errors from "./Errors";
 
 export interface Settings extends BaseRequestSettingsInterface {
-  getBy: MongoDBRequestFieldInterface[][];
+  getBy?: MongoDBRequestFieldInterface[][];
   userProjectionAllowed?: boolean;
   userProjectionInputField?: string;
   customOnSuccess?: Function;
@@ -25,7 +25,6 @@ export interface Settings extends BaseRequestSettingsInterface {
   customFindOneSettings?: Function;
   checksBeforeGettingDoc?: Function;
   onNoDocumentFound?: Function;
-  onError: Function;
 }
 
 /**
@@ -90,7 +89,7 @@ export default (settings: Settings): Function => {
 
         // @ts-ignore
         if (!Array.isArray(data[settings.userProjectionInputField])) {
-          await settings.onError(
+          await settings.onError!(
             new GenezisGeneralError(Errors.WRONG_TYPE, {
               field: settings.userProjectionInputField,
               mustBe: "Array",
@@ -135,12 +134,12 @@ export default (settings: Settings): Function => {
         }
       } else {
         findOneQuery = await constructQueryFromArrayOfVariables(
-          settings.getBy,
+          settings.getBy!,
           data
         );
 
         if (!findOneQuery) {
-          await settings.onError(
+          await settings.onError!(
             new GenezisGeneralError(
               Errors.QUERY_FROM_GIVEN_FIELDS_NOT_FOUND_MATCH
             ),
@@ -209,4 +208,3 @@ export default (settings: Settings): Function => {
     }
   );
 };
-
