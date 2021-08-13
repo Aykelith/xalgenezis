@@ -1,6 +1,6 @@
 {
   "name": "@aykelith/xalgenezis-expressjs-data",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Aykelith/xalgenezis#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/aykelith"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
   }
 }
