@@ -13,7 +13,7 @@ interface CreateServerSettings {
   hmr?: {
     eventsEmitter?: any;
     webpackEntries: {
-      name: string;
+      name?: string;
       configFilePath: string;
       statsFilePath?: string;
     }[];

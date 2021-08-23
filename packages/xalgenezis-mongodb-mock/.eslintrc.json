@@ -1,0 +1,32 @@
+{
+    "env": {
+        "es6": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "@typescript-eslint"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": "off",
+        "no-mixed-spaces-and-tabs": [
+            "warn"
+        ],
+        "no-unused-vars": ["warn"],
+        "quotes": [
+            "warn",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-console": "off"
+    }
+}
